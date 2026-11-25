@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Token Radar — which pre-token protocol is worth farming next</title>
+<link rel="stylesheet" href="app.css">
+</head>
+<body>
+<header class="top">
+  <div>
+    <h1>Token Radar</h1>
+    <p class="sub">Protocols that record no token yet, ranked by what their launch would be worth — and how to farm each one.</p>
+  </div>
+  <div class="meta" id="meta"></div>
+</header>
+<main>
+  <section class="controls" aria-label="Filter the board">
+    <input id="q" type="search" placeholder="Search a protocol…" autocomplete="off">
+    <select id="category" aria-label="Category"><option value="">All categories</option></select>
+    <select id="chain" aria-label="Chain"><option value="">All chains</option></select>
+    <select id="sort" aria-label="Sort by">
+      <option value="implied">Sort: implied value</option>
+      <option value="tvl">Sort: TVL</option>
+      <option value="growth">Sort: 7-day growth</option>
+      <option value="age">Sort: oldest first</option>
+    </select>
+    <label class="check"><input id="watchlist" type="checkbox"> Watchlist only</label>
+  </section>
+  <p class="count" id="count"></p>
+  <section class="detail" id="detail" hidden></section>
+  <table>
+    <thead><tr>
+      <th class="num">#</th><th>Protocol</th><th>Category</th><th>Chains</th>
+      <th class="num">TVL</th><th class="num">7d</th><th class="num">Implied value</th>
+    </tr></thead>
+    <tbody id="rows"></tbody>
+  </table>
+  <p class="empty" id="empty" hidden>No protocol matches these filters.</p>
+</main>
+<footer>
+  <p>Snapshot: DefiLlama protocols, fetched 2026-11-14. “Records no token” means DefiLlama's record carries no token — it is not proof a protocol has none. Implied values are this entry's own model, not a prediction that a token will launch. Farm steps are general guidance, not financial advice; never pay anyone to claim an airdrop.</p>
+</footer>
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
